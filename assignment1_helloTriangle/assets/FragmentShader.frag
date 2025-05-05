@@ -11,16 +11,30 @@ uniform float _FillAmount;
 
 void main()
 {
-    vec3 result = texture(_TextureOne, TexCoord).rgb;;
+    vec3 result;
+
+    float waveY = step(TexCoord.y, _FillAmount + sin(_Time));
+    
+    //Create sin wave
+    float sinWave = sin(_Time * _FillAmount);
+
+    //Cache TexCoord as UV
+    vec2 UV = TexCoord;
+
+    //If coord at fill line, add sin wave to coord
+   // if (UV.y < _FillAmount + 0.01 && UV.y > _FillAmount - 0.01)
+   // {
+    //    UV.y += sinWave;
+    //}
 
     //Sample textures
-    if (TexCoord.y < _FillAmount)
+    if (UV.y < _FillAmount)
     {
-        result = texture(_TextureOne, TexCoord).rgb;
+        result = texture(_TextureOne, UV).rgb;
     }
     else
     {
-        result = texture(_TextureTwo, TexCoord).rgb;
+        result = texture(_TextureTwo, UV).rgb;
     }
     
     FragColor = vec4(result, 1.0);

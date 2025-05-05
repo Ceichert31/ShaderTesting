@@ -19,11 +19,11 @@ void main()
 {
     vec3 pos = aPos;
 
-    //pos.x += sin(_Time * _Speed + pos.x) * _Amplitude;
+    //Check if should use tex 1 or 2
 
-    //pos.y += sin(_Time * _Speed + pos.y) * _Amplitude;
+    //Apply wave on fill line
 
-    //pos.z += sin(_Time * _Speed + pos.z) * _Amplitude;
+    //Check if below line
 
     gl_Position = vec4(pos.x, pos.y, pos.z, 1.0); // see how we directly give a vec3 to vec4's constructor
 

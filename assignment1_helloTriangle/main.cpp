@@ -146,7 +146,7 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		//Set uniform to our sin value
-		//customShader.setFloat("_Time", timeValue);
+		customShader.setFloat("_Time", timeValue);
 
 		//customShader.setVec3("_FragmentColors", fragColorX, fragColorY, fragColorZ);
 
