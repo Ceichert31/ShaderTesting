@@ -24,3 +24,4 @@ include(external/glm.cmake)
 
 add_subdirectory(core)
 add_subdirectory(mazeGeneration)
+add_subdirectory(assignment1_helloTriangle)
